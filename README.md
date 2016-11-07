@@ -23,7 +23,7 @@ Download videojs-levels and include it in your page along with video.js:
 <script src="video.js"></script>
 <script src="videojs-levels.js"></script>
 <script>
-var player = videojs('example-video', {}, function() {
+var player = videojs('example-video', { plugins: { levels: {} } }, function() {
     // Print a list of available levels
     console.log(this.getLevels());
     // Set the quality by index

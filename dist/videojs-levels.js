@@ -1,41 +1,45 @@
 /*! videojs-levels - v0.0.1 - 2016-11-07*/
-(function(window, videojs) {
+(function(window, vjs) {
   'use strict';
 
-  videojs.plugin('levels', function(options) {
-      videojs.Player.prototype.currentLevel = function () {
-        this.techCall_('currentLevel', level);
+  vjs.plugin('levels', function(options) {
+      var Player = this.constructor,
+          Flash = vjs.getComponent('Flash'),
+          Html5 = vjs.getComponent('Html5');
+
+      Player.prototype.currentLevel = function () {
+        return this.techGet_('currentLevel');
       };
 
-      videojs.Player.prototype.getLevels = function () {
+      Player.prototype.getLevels = function () {
         return this.techGet_('getLevels');
       };
 
-      videojs.Player.prototype.setLevel = function (level) {
+      Player.prototype.setLevel = function (level) {
         this.techCall_('setLevel', level);
       };
 
-      videojs.Flash.prototype.currentLevel = function () {
+      Flash.prototype.currentLevel = function () {
         return this.getEl().vjs_getProperty('currentLevel') || [];
       };
 
-      videojs.Flash.prototype.getLevels = function () {
+      Flash.prototype.getLevels = function () {
         return this.getEl().vjs_getProperty('getLevels') || [];
       };
 
-      videojs.Flash.prototype.setLevel = function (level) {
+      Flash.prototype.setLevel = function (level) {
         this.getEl().vjs_setProperty('setLevel', level);
       };
 
-      videojs.Html5.prototype.currentLevel = function () {
+      Html5.prototype.currentLevel = function () {
         return undefined;
       };
 
-      videojs.Html5.prototype.getLevels = function () {
+      Html5.prototype.getLevels = function () {
         return [];
       };
 
-      videojs.Html5.prototype.setLevel = function (level) {
+      Html5.prototype.setLevel = function (level) {
         // Do nothing
       };
   });
