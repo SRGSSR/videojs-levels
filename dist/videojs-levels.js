@@ -1,4 +1,4 @@
-/*! videojs-levels - v0.0.1 - 2016-11-09*/
+/*! videojs-levels - v0.0.1 - 2016-11-10*/
 (function(window, vjs) {
   'use strict';
 
@@ -12,7 +12,7 @@
         return this.trigger('levelsloaded');
       };
 
-      Player.prototype.handleTechLevelsswitched_ = function() {
+      Player.prototype.handleTechLevelswitched_ = function() {
         return this.trigger('levelswitched');
       };
 
@@ -20,7 +20,7 @@
       Player.prototype.loadTech_ = function() {
         loadTech_.apply(this, arguments);
         this.on(this.tech_, 'levelsloaded', this.handleTechLevelsloaded_);
-        this.on(this.tech_, 'levelswitched', this.handleTechLevelsswitched_);
+        this.on(this.tech_, 'levelswitched', this.handleTechLevelswitched_);
       };
 
       Player.prototype.currentLevel = function () {
@@ -35,12 +35,20 @@
         this.techCall_('setLevel', level);
       };
 
+      Player.prototype.isAutoLevel = function() {
+        return this.techGet_('isAutoLevel');
+      };
+
       Flash.prototype.currentLevel = function () {
         return this.getEl().vjs_getProperty('currentLevel') || [];
       };
 
       Flash.prototype.getLevels = function () {
         return this.getEl().vjs_getProperty('levels') || [];
+      };
+
+      Flash.prototype.isAutoLevel = function() {
+        return false;
       };
 
       Flash.prototype.setLevel = function (level) {
@@ -57,6 +65,10 @@
 
       Html5.prototype.setLevel = function (level) {
         // Do nothing
+      };
+
+      Html5.prototype.isAutoLevel = function() {
+        return false;
       };
   });
 
