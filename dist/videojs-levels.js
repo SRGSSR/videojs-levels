@@ -1,4 +1,4 @@
-/*! videojs-levels - v0.0.1 - 2016-11-10*/
+/*! videojs-levels - v0.0.1 - 2016-11-15*/
 (function(window, vjs) {
   'use strict';
 
@@ -40,11 +40,11 @@
       };
 
       Flash.prototype.currentLevel = function () {
-        return this.getEl().vjs_getProperty('currentLevel') || [];
+        return this.el_.vjs_getProperty('currentLevel');
       };
 
       Flash.prototype.getLevels = function () {
-        return this.getEl().vjs_getProperty('levels') || [];
+        return this.el_.vjs_getProperty('levels') || [];
       };
 
       Flash.prototype.isAutoLevel = function() {
@@ -52,7 +52,7 @@
       };
 
       Flash.prototype.setLevel = function (level) {
-        this.getEl().vjs_setProperty('currentLevel', level);
+        this.el_.vjs_setProperty('currentLevel', level);
       };
 
       Html5.prototype.currentLevel = function () {
