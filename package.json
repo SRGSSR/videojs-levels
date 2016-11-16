@@ -1,6 +1,6 @@
 {
   "name": "videojs-levels",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Chromecast tech for videojs",
   "license": "Apache-2.0",
   "main": "./dist/videojs-levels.js",
