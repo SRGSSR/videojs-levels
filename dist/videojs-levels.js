@@ -1,4 +1,4 @@
-/*! videojs-levels - v0.1.0 - 2016-11-30*/
+/*! videojs-levels - v0.2.0 - 2016-11-30*/
 (function(window, vjs) {
   'use strict';
   // Extend Default HTML5 and Flash tech

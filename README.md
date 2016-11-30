@@ -2,7 +2,7 @@
 
 <img align="right" height="30" src="http://www.srgssr.ch/fileadmin/templates/images/SRGLogo.gif">
 
-> A level plugin for video.js
+> A quality level plugin for video.js
 
 This plugin enhance VideoJS Player functionality to allow setting and getting quality levels. It does not
 include any physicial buttons.
