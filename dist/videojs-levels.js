@@ -1,4 +1,4 @@
-/*! videojs-levels - v0.2.0 - 2016-11-30*/
+/*! videojs-levels - v0.3.0 - 2016-12-22*/
 (function(window, vjs) {
   'use strict';
   // Extend Default HTML5 and Flash tech
@@ -38,8 +38,10 @@
   };
 
   vjs.plugin('levels', function(options) {
-      var Player = this.constructor,
-          loadTech_ = Player.prototype.loadTech_;
+      var constructor = this,
+          Player = {
+            loadTech_: constructor.loadTech_
+          };
 
       this.handleTechLevelsloaded_ = function() {
         return this.trigger('levelsloaded');
@@ -49,9 +51,8 @@
         return this.trigger('levelswitched');
       };
 
-
       this.loadTech_ = function() {
-        loadTech_.apply(this, arguments);
+        Player.loadTech_.apply(this, arguments);
         this.on(this.tech_, 'levelsloaded', this.handleTechLevelsloaded_);
         this.on(this.tech_, 'levelswitched', this.handleTechLevelswitched_);
       };

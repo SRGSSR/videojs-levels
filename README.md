@@ -8,7 +8,6 @@ This plugin enhance VideoJS Player functionality to allow setting and getting qu
 include any physicial buttons.
 
 - [Getting Started](#getting-started)
-- [Documentation](#documentation)
 
 ## Getting Started
 
