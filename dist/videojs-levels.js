@@ -1,25 +1,8 @@
-/*! videojs-levels - v0.3.0 - 2016-12-22*/
+/*! videojs-levels - v0.4.0 - 2018-08-03*/
 (function(window, vjs) {
   'use strict';
-  // Extend Default HTML5 and Flash tech
-  var Flash = vjs.getComponent('Flash'),
-      Html5 = vjs.getComponent('Html5');
-
-  Flash.prototype.currentLevel = function () {
-    return this.el_.vjs_getProperty('currentLevel');
-  };
-
-  Flash.prototype.getLevels = function () {
-    return this.el_.vjs_getProperty('levels') || [];
-  };
-
-  Flash.prototype.isAutoLevel = function() {
-    return false;
-  };
-
-  Flash.prototype.setLevel = function (level) {
-    this.el_.vjs_setProperty('currentLevel', level);
-  };
+  // Extend Default HTML5
+  var Html5 = vjs.getComponent('Html5');
 
   Html5.prototype.currentLevel = function () {
     return undefined;
