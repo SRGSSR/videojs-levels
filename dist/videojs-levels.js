@@ -2,7 +2,7 @@
 (function(window, vjs) {
   'use strict';
   // Extend Default HTML5
-  var Html5 = vjs.getComponent('Html5');
+  var Html5 = vjs.getTech('Html5');
 
   Html5.prototype.currentLevel = function () {
     return undefined;
