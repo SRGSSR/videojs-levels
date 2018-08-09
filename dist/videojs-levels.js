@@ -1,8 +1,8 @@
-/*! videojs-levels - v0.4.0 - 2018-08-03*/
+/*! videojs-levels - v0.4.0 - 2018-08-09*/
 (function(window, vjs) {
   'use strict';
   // Extend Default HTML5
-  var Html5 = vjs.getTech('Html5');
+  var Html5 = vjs.getComponent('Html5');
 
   Html5.prototype.currentLevel = function () {
     return undefined;
@@ -20,7 +20,7 @@
     return false;
   };
 
-  vjs.plugin('levels', function(options) {
+  vjs.registerPlugin('levels', function(options) {
       var constructor = this,
           Player = {
             loadTech_: constructor.loadTech_
